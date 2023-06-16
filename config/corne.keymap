@@ -23,19 +23,51 @@
                         flavor = "balanced";
                         bindings = <&kp>, <&kp>;
                 };
-                shm: shift_mod {
+                sm_bk_del: shift_mod_bkps_del {
                         compatible = "zmk,behavior-mod-morph";
-                        label = "SHIFT_MOD";
-                        #binding-cells = <2>;
-                        bindings = <&kp>, <&kp>;
+                        label = "SHIFT_MOD_BKPS_DEL";
+                        #binding-cells = <0>;
+                        bindings = <&kp BSPC>, <&kp DEL>;
                         mods = <(MOD_LSFT|MOD_RSFT)>;
                         keep-mods = <(MOD_RSFT)>;
                 };
-                shl: shift_mod_layer {
+                sm_bkt: shift_mod_bkt {
                         compatible = "zmk,behavior-mod-morph";
-                        label = "SHIFT_MOD_LAYER";
-                        #binding-cells = <2>;
-                        bindings = <&to>, <&kp>;
+                        label = "SHIFT_MOD_BKT";
+                        #binding-cells = <0>;
+                        bindings = <&kp LBKT>, <&kp RBKT>;
+                        mods = <(MOD_LSFT|MOD_RSFT)>;
+                        keep-mods = <(MOD_RSFT)>;
+                };
+                sm_par: shift_mod_par {
+                        compatible = "zmk,behavior-mod-morph";
+                        label = "SHIFT_MOD_PAR";
+                        #binding-cells = <0>;
+                        bindings = <&kp LPAR>, <&kp RPAR>;
+                        mods = <(MOD_LSFT|MOD_RSFT)>;
+                        keep-mods = <(MOD_RSFT)>;
+                };
+                sm_brc: shift_mod_brc {
+                        compatible = "zmk,behavior-mod-morph";
+                        label = "SHIFT_MOD_BRC";
+                        #binding-cells = <0>;
+                        bindings = <&kp LBRC>, <&kp RBRC>;
+                        mods = <(MOD_LSFT|MOD_RSFT)>;
+                        keep-mods = <(MOD_RSFT)>;
+                };
+                sm_rt_cap: shift_mod_ret_cap {
+                        compatible = "zmk,behavior-mod-morph";
+                        label = "SHIFT_MOD_RET_CAP";
+                        #binding-cells = <0>;
+                        bindings = <&kp RET>, <&kp CAPS>;
+                        mods = <(MOD_LSFT|MOD_RSFT)>;
+                        keep-mods = <(MOD_RSFT)>;
+                };
+                sl_no_tab: shift_mod_no_tab {
+                        compatible = "zmk,behavior-mod-morph";
+                        label = "SHIFT_MOD_LAYER_NO_TAB";
+                        #binding-cells = <0>;
+                        bindings = <&to NUM>, <&kp TAB>;
                         mods = <(MOD_LSFT|MOD_RSFT)>;
                         keep-mods = <(MOD_RSFT)>;
                 };
@@ -53,7 +85,7 @@
    &none &mt ESC Q    &kp W         &kp E         &kp R         &kp T           &kp Y     &kp U        &kp I           &kp O         &kp P           &none
    &none &bhm LCTRL A &bhm LSHIFT S &bhm LGUI D   &bhm LALT F   &kp G           &kp H     &bhm RALT J  &bhm RGUI K     &bhm RSHIFT L &bhm RCTRL SEMI &none
    &none &kp Z        &kp X         &kp C         &kp V         &kp B           &kp N     &kp M        &kp COMMA       &kp DOT       &kp FSLH        &none
-                                    &shm BSPC DEL &shl NUM TAB  &shm RET CAPS   &kp SPACE &to 2        &kp ESC
+                                    &sm_bk_del    &sl_no_tab    &sm_rt_cap      &kp SPACE &to 2        &kp ESC
                         >;
                 };
 
@@ -64,9 +96,9 @@
 // | N/A  |   1      |  2       |   3       |    =/+     |  -/_  |   |     [/]    |    (/)     |   {/}   |   '/"    |    ~    | N/A  |
 //                              |  RSHIFT   |    TAB     |  ENT  |   |    SPC     |    MAIN    |   ESC   |
                        bindings = <
-   &none &kp 7        &kp 8         &kp 9         &kp 0         &kp HOME          &none           &kp PG_UP      &kp UP          &kp PG_DN  &kp DEL    &none
-   &none &bhm LCTRL 4 &bhm LSHIFT 5 &bhm LGUI 6   &kp LALT      &kp END           &kp BSLH        &kp LEFT       &kp DOWN        &kp RIGHT  &kp RCTRL  &none
-   &none &kp 1        &kp 2         &kp 3         &kp EQUAL     &kp MINUS         &shm LBKT RBKT  &shm LPAR RPAR &shm LBRC RBRC  &kp FSLH   &kp GRAVE  &none
+   &none &kp 7        &kp 8         &kp 9         &kp 0         &kp HOME          &none           &kp PG_UP      &kp UP       &kp PG_DN  &kp DEL    &none
+   &none &bhm LCTRL 4 &bhm LSHIFT 5 &bhm LGUI 6   &kp LALT      &kp END           &kp BSLH        &kp LEFT       &kp DOWN     &kp RIGHT  &kp RCTRL  &none
+   &none &kp 1        &kp 2         &kp 3         &kp EQUAL     &kp MINUS         &sm_bkt         &sm PAR        &sm BRC      &kp FSLH   &kp GRAVE  &none
                                     &kp RSHIFT    &kp TAB       &kp RET           &kp SPACE       &to 0          &none
                         >;
                 };
