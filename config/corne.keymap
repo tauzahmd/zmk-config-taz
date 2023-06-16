@@ -23,7 +23,7 @@
                         flavor = "balanced";
                         bindings = <&kp>, <&kp>;
                 };
-                shm: shift_mod_keep {
+                shm: shift_mod {
                         compatible = "zmk,behavior-mod-morph";
                         label = "SHIFT_MOD";
                         #binding-cells = <2>;
@@ -31,9 +31,9 @@
                         mods = <(MOD_LSFT|MOD_RSFT)>;
                         keep-mods = <(MOD_RSFT)>;
                 };
-                shl: shift_mod_keep {
+                shl: shift_mod_layer {
                         compatible = "zmk,behavior-mod-morph";
-                        label = "SHIFT_MOD";
+                        label = "SHIFT_MOD_LAYER";
                         #binding-cells = <2>;
                         bindings = <&to>, <&kp>;
                         mods = <(MOD_LSFT|MOD_RSFT)>;
