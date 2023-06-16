@@ -79,7 +79,7 @@
 //                               |  RSHIFT |    TAB     |  ENT  |   |   SPC  |    MAIN  |   ESC   |
                         bindings = <
    &none  &kp F1       &kp F2       &kp F3       &kp F4       &kp F5            &kp F6     &kp F7        &kp F8        &kp F9       &kp F10      &none
-   &none  &kp LCTRL    &kp LSHFT    &kp LGUI     &kp LALT     &kp BTCLR         &kp F11    &kp F12       &kp PSCRN     &kp INS      &kp del      &none
+   &none  &kp LCTRL    &kp LSHFT    &kp LGUI     &kp LALT     &kp BTCLR         &kp F11    &kp F12       &kp PSCRN     &kp INS      &kp DEL      &none
    &none  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &kp C_MUTE &kp C_VOL_UP  &kp C_VOL_DN  &kp C_BRI_UP &kp C_BRI_DN &none
                                     &kp RSHIFT   &kp TAB      &kp RET           &kp SPACE  &to 0         &none
                         >;
