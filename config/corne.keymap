@@ -108,11 +108,11 @@
 // | N/A  |     F1    |   F2     |   F3    |    F4      |   F5  |   | F6     | F7       |  F8      |  F9      |   F10     | N/A  |
 // | N/A  |   LCTRL   |  LSHIFT  |   LGUI  |    LALT    | BTCLR |   | F11    | F12      |  PSCRN   |  INS     |   DEL     | N/A  |
 // | N/A  |    BT1    |  BT2     |   BT3   |    BT4     |  BT5  |   | C_MUTE | C_VOL_UP | C_VOL_DN | C_BRI_UP | C_BRI_DN  | N/A  |
-//                               |  RSHIFT |    TAB     |  ENT  |   |   SPC  |    MAIN  |   ESC   |
+//                               |  RSHIFT |    TAB     |  ENT  |   |   SPC  |    MAIN  |   ESC    |
                         bindings = <
-   &none  &kp F1       &kp F2       &kp F3       &kp F4       &kp F5            &kp F6     &kp F7        &kp F8        &kp F9       &kp F10      &none
-   &none  &kp LCTRL    &kp LSHFT    &kp LGUI     &kp LALT     &bt BTCLR         &kp F11    &kp F12       &kp PSCRN     &kp INS      &kp DEL      &none
-   &none  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &kp C_MUTE &kp C_VOL_UP  &kp C_VOL_DN  &kp C_BRI_UP &kp C_BRI_DN &none
+   &none  &kp F1       &kp F2       &kp F3       &kp F4       &kp F5            &kp F6     &kp F7        &kp F8        &kp F9       &kp F10       &none
+   &none  &kp LCTRL    &kp LSHFT    &kp LGUI     &kp LALT     &bt BTCLR         &kp F11    &kp F12       &kp PSCRN     &kp INS      &kp DEL       &none
+   &none  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &kp C_MUTE &kp C_VOL_UP  &kp C_VOL_DN  &kp C_BRI_UP &kp C_BRI_DN  &none
                                     &kp RSHIFT   &kp TAB      &kp RET           &kp SPACE  &to 0         &none
                         >;
                 };
