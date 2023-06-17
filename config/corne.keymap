@@ -98,7 +98,7 @@
                        bindings = <
    &none &kp 7        &kp 8         &kp 9         &kp 0         &kp HOME          &none           &kp PG_UP      &kp UP       &kp PG_DN  &kp DEL    &none
    &none &bhm LCTRL 4 &bhm LSHIFT 5 &bhm LGUI 6   &kp LALT      &kp END           &kp BSLH        &kp LEFT       &kp DOWN     &kp RIGHT  &kp RCTRL  &none
-   &none &kp 1        &kp 2         &kp 3         &kp EQUAL     &kp MINUS         &sm_bkt         &sm PAR        &sm BRC      &kp FSLH   &kp GRAVE  &none
+   &none &kp 1        &kp 2         &kp 3         &kp EQUAL     &kp MINUS         &sm_bkt         &sm_par        &sm_brc      &kp FSLH   &kp GRAVE  &none
                                     &kp RSHIFT    &kp TAB       &kp RET           &kp SPACE       &to 0          &none
                         >;
                 };
