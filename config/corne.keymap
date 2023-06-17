@@ -28,48 +28,48 @@
                         label = "SHIFT_MOD_BKPS_DEL";
                         #binding-cells = <0>;
                         bindings = <&kp BSPC>, <&kp DEL>;
-                        mods = <(MOD_LSFT|MOD_RSFT)>;
-                        keep-mods = <(MOD_RSFT)>;
+                        mods = <(LSHIFT|RSHIFT)>;
+                        keep-mods = <(RSHIFT)>;
                 };
                 sm_bkt: shift_mod_bkt {
                         compatible = "zmk,behavior-mod-morph";
                         label = "SHIFT_MOD_BKT";
                         #binding-cells = <0>;
                         bindings = <&kp LBKT>, <&kp RBKT>;
-                        mods = <(MOD_LSFT|MOD_RSFT)>;
-                        keep-mods = <(MOD_RSFT)>;
+                        mods = <(LSHIFT|RSHIFT)>;
+                        keep-mods = <(RSHIFT)>;
                 };
                 sm_par: shift_mod_par {
                         compatible = "zmk,behavior-mod-morph";
                         label = "SHIFT_MOD_PAR";
                         #binding-cells = <0>;
                         bindings = <&kp LPAR>, <&kp RPAR>;
-                        mods = <(MOD_LSFT|MOD_RSFT)>;
-                        keep-mods = <(MOD_RSFT)>;
+                        mods = <(LSHIFT|RSHIFT)>;
+                        keep-mods = <(RSHIFT)>;
                 };
                 sm_brc: shift_mod_brc {
                         compatible = "zmk,behavior-mod-morph";
                         label = "SHIFT_MOD_BRC";
                         #binding-cells = <0>;
                         bindings = <&kp LBRC>, <&kp RBRC>;
-                        mods = <(MOD_LSFT|MOD_RSFT)>;
-                        keep-mods = <(MOD_RSFT)>;
+                        mods = <(LSHIFT|RSHIFT)>;
+                        keep-mods = <(RSHIFT)>;
                 };
                 sm_rt_cap: shift_mod_ret_cap {
                         compatible = "zmk,behavior-mod-morph";
                         label = "SHIFT_MOD_RET_CAP";
                         #binding-cells = <0>;
                         bindings = <&kp RET>, <&kp CAPS>;
-                        mods = <(MOD_LSFT|MOD_RSFT)>;
-                        keep-mods = <(MOD_RSFT)>;
+                        mods = <(LSHIFT|RSHIFT)>;
+                        keep-mods = <(RSHIFT)>;
                 };
                 sl_no_tab: shift_mod_no_tab {
                         compatible = "zmk,behavior-mod-morph";
                         label = "SHIFT_MOD_LAYER_NO_TAB";
                         #binding-cells = <0>;
                         bindings = <&to NUM>, <&kp TAB>;
-                        mods = <(MOD_LSFT|MOD_RSFT)>;
-                        keep-mods = <(MOD_RSFT)>;
+                        mods = <(LSHIFT|RSHIFT)>;
+                        keep-mods = <(RSHIFT)>;
                 };
         };
         keymap {
@@ -96,10 +96,10 @@
 // | N/A  |   1      |  2       |   3       |    =/+     |  -/_  |   |     [/]    |    (/)     |   {/}   |   '/"    |    ~    | N/A  |
 //                              |  RSHIFT   |    TAB     |  ENT  |   |    SPC     |    MAIN    |   ESC   |
                        bindings = <
-   &none &kp 7        &kp 8         &kp 9         &kp 0         &kp HOME          &none           &kp PG_UP      &kp UP       &kp PG_DN  &kp DEL    &none
-   &none &bhm LCTRL 4 &bhm LSHIFT 5 &bhm LGUI 6   &kp LALT      &kp END           &kp BSLH        &kp LEFT       &kp DOWN     &kp RIGHT  &kp RCTRL  &none
-   &none &kp 1        &kp 2         &kp 3         &kp EQUAL     &kp MINUS         &sm_bkt         &sm_par        &sm_brc      &kp FSLH   &kp GRAVE  &none
-                                    &kp RSHIFT    &kp TAB       &kp RET           &kp SPACE       &to 0          &none
+   &none &kp N7        &kp N8         &kp N9         &kp N0        &kp HOME          &none           &kp PG_UP      &kp UP       &kp PG_DN  &kp DEL    &none
+   &none &bhm LCTRL N4 &bhm LSHIFT N5 &bhm LGUI N6   &kp LALT      &kp END           &kp BSLH        &kp LEFT       &kp DOWN     &kp RIGHT  &kp RCTRL  &none
+   &none &kp N1        &kp N2         &kp N3         &kp EQUAL     &kp MINUS         &sm_bkt         &sm_par        &sm_brc      &kp FSLH   &kp GRAVE  &none
+                                      &kp RSHIFT     &kp TAB       &kp RET           &kp SPACE       &to 0          &none
                         >;
                 };
 
@@ -118,4 +118,4 @@
                 };
 
         };
-}; 
+};      
