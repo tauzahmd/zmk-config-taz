@@ -12,11 +12,11 @@
 #define NUM   1
 #define SYS   2
 
+&sk {
+        release-after-ms = <2000>;
+        /delete-property/ ignore-modifiers;
+};
 / {
-        &sk {
-                release-after-ms = <2000>;
-                /delete-property/ ignore-modifiers;
-        };
         behaviors {
                 bhm: balanced_homerow_mods {
                         compatible = "zmk,behavior-hold-tap";
