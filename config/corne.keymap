@@ -108,7 +108,7 @@
    &none &mt ESC Q    &kp W         &kp E         &kp R         &kp T           &kp Y     &kp U        &kp I           &kp O         &kp P           &none
    &none &bhm LCTRL A &bhm LSHIFT S &bhm LGUI D   &bhm LALT F   &kp G           &kp H     &bhm RALT J  &bhm RGUI K     &bhm RSHIFT L &bhm RCTRL SEMI &none
    &none &kp Z        &kp X         &kp C         &kp V         &kp B           &kp N     &kp M        &kp COMMA       &kp DOT       &kp FSLH        &none
-                                    &sm_bk_del    &sl_no_tab    &sm_rt_cap      &kp SPACE &to 2        &td_mt
+                                    &sm_bk_del    &sl_no_tab    &sm_rt_cap      &kp SPACE &td0         &td_mt
                         >;
                 };
 
