@@ -19,7 +19,7 @@
                         label = "HOMEROW_MODS";
                         #binding-cells = <2>;
                         tapping-term-ms = <200>;    // <---[[moderate duration]]
-                        quick-tap-ms = <0>;
+                        quick-tap-ms = <125>;
                         flavor = "balanced";
                         bindings = <&kp>, <&kp>;
                 };
@@ -71,6 +71,29 @@
                         mods = <(LSHIFT|RSHIFT)>;
                         keep-mods = <(RSHIFT)>;
                 };
+                td0: tap_dance_0 {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_0";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&to 2>, <&to 0>;
+                };
+                stk: sticky_s_c_a {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "STICKY_S_C_A";
+                        #binding-cells = <2>;
+                        tapping-term-ms = <200>;
+                        quick-tap-ms = <0>;
+                        flavor = "tap-preferred";
+                        bindings = <&sk>, <&sk>;
+                };
+                td_mt: tap_dance_mod_tap {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_MOD_TAP";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&stk RSHIFT RALT>, <&kp RCTRL>;
+                };
         };
         keymap {
                 compatible = "zmk,keymap";
@@ -80,12 +103,12 @@
 // | N/A  |  ESC/Q    |  W       |  E      |  R        |    T    |   |  Y  |    U        |   I      |   O      |  P        | N/A  |
 // | N/A  |  A/LCTRL  | S/LSHIFT |  D/LGUI |  F/LALT   |    G    |   |  H  |   J/RALT    |  K/RGUI  | L/RSHIFT |  ;/RCTRL  | N/A  |
 // | N/A  |  Z        |  X       |  C      |  V        |    B    |   |  N  |   M         |  ,       |  .       |  /        | N/A  |
-//                               | DEL/BKP |  TAB/NUM  | ENT/CAP |   | SPC |   SYS       |  ESC     |
+//                               | DEL/BKP |  TAB/NUM  | ENT/CAP |   | SPC |   SYS       |  sticky  |
                         bindings = <
    &none &mt ESC Q    &kp W         &kp E         &kp R         &kp T           &kp Y     &kp U        &kp I           &kp O         &kp P           &none
    &none &bhm LCTRL A &bhm LSHIFT S &bhm LGUI D   &bhm LALT F   &kp G           &kp H     &bhm RALT J  &bhm RGUI K     &bhm RSHIFT L &bhm RCTRL SEMI &none
    &none &kp Z        &kp X         &kp C         &kp V         &kp B           &kp N     &kp M        &kp COMMA       &kp DOT       &kp FSLH        &none
-                                    &sm_bk_del    &sl_no_tab    &sm_rt_cap      &kp SPACE &to 2        &kp ESC
+                                    &sm_bk_del    &sl_no_tab    &sm_rt_cap      &kp SPACE &to 2        &td_mt
                         >;
                 };
 
@@ -94,12 +117,12 @@
 // | N/A  |    7     |   8      |   9       |     0      | HOME  |   |   N/A      |   PG_UP    |  UP     |  PG_DN   |   DEL   | N/A  |
 // | N/A  |  4/LCTRL | 5/LSHIFT |   6/LGUI  |   LALT     |  END  |   | "\" / "|"  |  LEFT      |  DOWN   |  RIGHT   |   RCTRL | N/A  |
 // | N/A  |   1      |  2       |   3       |    =/+     |  -/_  |   |     [/]    |    (/)     |   {/}   |   '/"    |    ~    | N/A  |
-//                              |  RSHIFT   |    TAB     |  ENT  |   |    SPC     |    MAIN    |   ESC   |
+//                              |  RSHIFT   |    TAB     |  ENT  |   |    SPC     |    MAIN    |  sticky |
                        bindings = <
    &none &kp N7        &kp N8         &kp N9         &kp N0        &kp HOME          &none           &kp PG_UP      &kp UP       &kp PG_DN  &kp DEL    &none
    &none &bhm LCTRL N4 &bhm LSHIFT N5 &bhm LGUI N6   &kp LALT      &kp END           &kp BSLH        &kp LEFT       &kp DOWN     &kp RIGHT  &kp RCTRL  &none
    &none &kp N1        &kp N2         &kp N3         &kp EQUAL     &kp MINUS         &sm_bkt         &sm_par        &sm_brc      &kp FSLH   &kp GRAVE  &none
-                                      &kp RSHIFT     &kp TAB       &kp RET           &kp SPACE       &to 0          &none
+                                      &kp RSHIFT     &kp TAB       &kp RET           &kp SPACE       &to 0          &td_mt
                         >;
                 };
 
@@ -108,12 +131,12 @@
 // | N/A  |     F1    |   F2     |   F3    |    F4      |   F5  |   | F6     | F7       |  F8      |  F9      |   F10     | N/A  |
 // | N/A  |   LCTRL   |  LSHIFT  |   LGUI  |    LALT    | BTCLR |   | F11    | F12      |  PSCRN   |  INS     |   DEL     | N/A  |
 // | N/A  |    BT1    |  BT2     |   BT3   |    BT4     |  BT5  |   | C_MUTE | C_VOL_UP | C_VOL_DN | C_BRI_UP | C_BRI_DN  | N/A  |
-//                               |  RSHIFT |    TAB     |  ENT  |   |   SPC  |    MAIN  |   ESC    |
+//                               |  RSHIFT |    TAB     |  ENT  |   |   SPC  |    MAIN  |  sticky  |
                         bindings = <
    &none  &kp F1       &kp F2       &kp F3       &kp F4       &kp F5            &kp F6     &kp F7        &kp F8        &kp F9       &kp F10       &none
    &none  &kp LCTRL    &kp LSHFT    &kp LGUI     &kp LALT     &bt BT_CLR        &kp F11    &kp F12       &kp PSCRN     &kp INS      &kp DEL       &none
    &none  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &kp C_MUTE &kp C_VOL_UP  &kp C_VOL_DN  &kp C_BRI_UP &kp C_BRI_DN  &none
-                                    &kp RSHIFT   &kp TAB      &kp RET           &kp SPACE  &to 0         &none
+                                    &kp RSHIFT   &kp TAB      &kp RET           &kp SPACE  &to 0         &td_mt
                         >;
                 };
 
