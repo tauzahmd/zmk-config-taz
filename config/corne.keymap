@@ -14,6 +14,10 @@
 
 / {
         behaviors {
+                &sk {
+                        release-after-ms = <2000>;
+                        /delete-property/ ignore-modifiers;
+                };
                 bhm: balanced_homerow_mods {
                         compatible = "zmk,behavior-hold-tap";
                         label = "HOMEROW_MODS";
