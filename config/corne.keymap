@@ -71,13 +71,6 @@
                         mods = <(LSHIFT|RSHIFT)>;
                         keep-mods = <(RSHIFT)>;
                 };
-                td0: tap_dance_0 {
-                        compatible = "zmk,behavior-tap-dance";
-                        label = "TAP_DANCE_0";
-                        #binding-cells = <0>;
-                        tapping-term-ms = <200>;
-                        bindings = <&to 2>, <&to 0>;
-                };
                 stk: sticky_s_c_a {
                         compatible = "zmk,behavior-hold-tap";
                         label = "STICKY_S_C_A";
@@ -92,7 +85,7 @@
                         label = "TAP_DANCE_MOD_TAP";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&stk RSHIFT RALT>, <&kp RCTRL>;
+                        bindings = <&stk RSHIFT RALT>, <&stk RCTRL>;
                 };
         };
         keymap {
@@ -108,7 +101,7 @@
    &none &mt ESC Q    &kp W         &kp E         &kp R         &kp T           &kp Y     &kp U        &kp I           &kp O         &kp P           &none
    &none &bhm LCTRL A &bhm LSHIFT S &bhm LGUI D   &bhm LALT F   &kp G           &kp H     &bhm RALT J  &bhm RGUI K     &bhm RSHIFT L &bhm RCTRL SEMI &none
    &none &kp Z        &kp X         &kp C         &kp V         &kp B           &kp N     &kp M        &kp COMMA       &kp DOT       &kp FSLH        &none
-                                    &sm_bk_del    &sl_no_tab    &sm_rt_cap      &kp SPACE &td0         &td_mt
+                                    &sm_bk_del    &sl_no_tab    &sm_rt_cap      &kp SPACE &to SYS      &td_mt
                         >;
                 };
 
