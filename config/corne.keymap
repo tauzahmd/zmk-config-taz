@@ -32,48 +32,48 @@
                         label = "SHIFT_MOD_BKPS_DEL";
                         #binding-cells = <0>;
                         bindings = <&kp BSPC>, <&kp DEL>;
-                        mods = <(LSHIFT|RSHIFT)>;
-                        keep-mods = <(RSHIFT)>;
+                        mods = <(MOD_LSFT|MOD_RSFT)>;
+                        keep-mods = <(MOD_RSFT)>;
                 };
                 sm_bkt: shift_mod_bkt {
                         compatible = "zmk,behavior-mod-morph";
                         label = "SHIFT_MOD_BKT";
                         #binding-cells = <0>;
                         bindings = <&kp LBKT>, <&kp RBKT>;
-                        mods = <(LSHIFT|RSHIFT)>;
-                        keep-mods = <(RSHIFT)>;
+                        mods = <(MOD_LSFT|MOD_RSFT)>;
+                        keep-mods = <(MOD_RSFT)>;
                 };
                 sm_par: shift_mod_par {
                         compatible = "zmk,behavior-mod-morph";
                         label = "SHIFT_MOD_PAR";
                         #binding-cells = <0>;
                         bindings = <&kp LPAR>, <&kp RPAR>;
-                        mods = <(LSHIFT|RSHIFT)>;
-                        keep-mods = <(RSHIFT)>;
+                        mods = <(MOD_LSFT|MOD_RSFT)>;
+                        keep-mods = <(MOD_RSFT)>;
                 };
                 sm_brc: shift_mod_brc {
                         compatible = "zmk,behavior-mod-morph";
                         label = "SHIFT_MOD_BRC";
                         #binding-cells = <0>;
                         bindings = <&kp LBRC>, <&kp RBRC>;
-                        mods = <(LSHIFT|RSHIFT)>;
-                        keep-mods = <(RSHIFT)>;
+                        mods = <(MOD_LSFT|MOD_RSFT)>;
+                        keep-mods = <(MOD_RSFT)>;
                 };
                 sm_rt_cap: shift_mod_ret_cap {
                         compatible = "zmk,behavior-mod-morph";
                         label = "SHIFT_MOD_RET_CAP";
                         #binding-cells = <0>;
                         bindings = <&kp RET>, <&kp CAPS>;
-                        mods = <(LSHIFT|RSHIFT)>;
-                        keep-mods = <(RSHIFT)>;
+                        mods = <(MOD_LSFT|MOD_RSFT)>;
+                        keep-mods = <(MOD_RSFT)>;
                 };
                 sl_no_tab: shift_mod_no_tab {
                         compatible = "zmk,behavior-mod-morph";
                         label = "SHIFT_MOD_LAYER_NO_TAB";
                         #binding-cells = <0>;
                         bindings = <&to NUM>, <&kp TAB>;
-                        mods = <(LSHIFT|RSHIFT)>;
-                        keep-mods = <(RSHIFT)>;
+                        mods = <(MOD_LSFT|MOD_RSFT)>;
+                        keep-mods = <(MOD_RSFT)>;
                 };
                 stk: sticky_s_c_a {
                         compatible = "zmk,behavior-hold-tap";
@@ -96,7 +96,7 @@
                         label = "SHIFT_MOD_MAIN_LAYER";
                         #binding-cells = <0>;
                         bindings = <&to SYS>, <&kp MAIN>;
-                        mods = <(LSHIFT|RSHIFT)>;
+                        mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
         };
         keymap {
