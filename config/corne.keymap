@@ -78,7 +78,7 @@
                         compatible = "zmk,behavior-hold-tap";
                         label = "STICKY_S_C_A";
                         #binding-cells = <2>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <150>;
                         quick-tap-ms = <0>;
                         flavor = "tap-preferred";
                         bindings = <&sk>, <&sk>;
@@ -87,7 +87,7 @@
                         compatible = "zmk,behavior-tap-dance";
                         label = "TAP_DANCE_MOD_TAP";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <300>;
                         bindings = <&stk RALT RSHIFT>, <&sk RCTRL>;
                 };
                 sh_ma: shift_mod_main_layer {
@@ -104,12 +104,12 @@
                 default_layer {
 // -----------------------------------------------------------------------------------------------------------------------------
 // | N/A  |  ESC/Q    |  W       |  E      |  R        |    T    |   |  Y  |    U        |   I      |   O      |  P        | N/A  |
-// | N/A  |  A/LCTRL  | S/LSHIFT |  D/LGUI |  F/LALT   |    G    |   |  H  |   J/RALT    |  K/RGUI  | L/RSHIFT |  ;/RCTRL  | N/A  |
+// | N/A  |  A/LCTRL  | S/LSHIFT |  D/LGUI |  F/LALT   | G/LCTRL |   |  H  |   J/RALT    |  K/RGUI  | L/RSHIFT |  ;/RCTRL  | N/A  |
 // | N/A  |  Z        |  X       |  C      |  V        |    B    |   |  N  |   M         |  ,       |  .       |  /        | N/A  |
 //                               | TAB/NUM |  DEL/BKP  | ENT/CAP |   | SPC |   sticky    |  SYS     |
                         bindings = <
    &none &mt ESC Q    &kp W         &kp E         &kp R         &kp T           &kp Y     &kp U        &kp I           &kp O         &kp P           &none
-   &none &bhm LCTRL A &bhm LSHIFT S &bhm LGUI D   &bhm LALT F   &kp G           &kp H     &bhm RALT J  &bhm RGUI K     &bhm RSHIFT L &bhm RCTRL SEMI &none
+   &none &bhm LCTRL A &bhm LSHIFT S &bhm LGUI D   &bhm LALT F   &bhm LCTRL G    &kp H     &bhm RALT J  &bhm RGUI K     &bhm RSHIFT L &bhm RCTRL SEMI &none
    &none &kp Z        &kp X         &kp C         &kp V         &kp B           &kp N     &kp M        &kp COMMA       &kp DOT       &kp FSLH        &none
                                     &sl_no_tab    &sm_bk_del    &sm_rt_cap      &kp SPACE &td_mt       &sh_ma
                         >;
@@ -144,4 +144,4 @@
                 };
 
         };
-};      
+};
