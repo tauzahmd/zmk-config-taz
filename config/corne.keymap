@@ -97,6 +97,15 @@
                         bindings = <&to SYS>, <&kp MAIN>;
                         mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
+                td_main: to_main_layer {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "TO_MAIN_LAYER";
+                        #binding-cells = <2>;
+                        tapping-term-ms = <200>;
+                        quick-tap-ms = <0>;
+                        flavor = "tap-preferred";
+                        bindings = <&to>, <&kp>;
+                };
         };
         keymap {
                 compatible = "zmk,keymap";
@@ -117,12 +126,12 @@
 
                 lower_layer {
 // -----------------------------------------------------------------------------------------------------------------------------------
-// | N/A  |    7     |   8      |   9       |     0      | HOME  |   |    /       |   PG_UP    |  UP     |  PG_DN   |   '/"   | N/A  |
+// | N/A  |    7     |   8      |   9       |     0      |HOME/M |   |    /       |   PG_UP    |  UP     |  PG_DN   |   '/"   | N/A  |
 // | N/A  |  4/LCTRL | 5/LSHIFT |   6/LGUI  |   LALT     |  END  |   | "\" / "|"  |   LEFT     |  DOWN   |  RIGHT   |   ;     | N/A  |
 // | N/A  |   1      |  2       |   3       |    =/+     |  -/_  |   |     [/]    |    (/)     |   {/}   |    .     |    ~    | N/A  |
 //                              |    TAB    |  DEL/BKP   |  ENT  |   |    SPC     |    sticky  |   MAIN  |
                        bindings = <
-   &none &kp N7        &kp N8         &kp N9         &kp N0        &kp HOME          &kp FSLH        &kp PG_UP      &kp UP       &kp PG_DN  &kp SQT    &none
+   &none &kp N7        &kp N8         &kp N9         &kp N0        &td_main 0 HOME   &kp FSLH        &kp PG_UP      &kp UP       &kp PG_DN  &kp SQT    &none
    &none &bhm LCTRL N4 &bhm LSHIFT N5 &bhm LGUI N6   &kp LALT      &kp END           &kp BSLH        &kp LEFT       &kp DOWN     &kp RIGHT  &kp SEMI   &none
    &none &kp N1        &kp N2         &kp N3         &kp EQUAL     &kp MINUS         &sm_bkt         &sm_par        &sm_brc      &kp DOT    &kp GRAVE  &none
                                       &kp TAB        &sm_bk_del    &kp RET           &kp SPACE       &td_mt         &to 0
@@ -131,12 +140,12 @@
 
                 raise_layer {
 // -------------------------------------------------------------------------------------------------------------------------------
-// | N/A  |     F1    |   F2     |   F3    |    F4      |   F5  |   | F6     | F7       |  F8      |  F9      |   F10     | N/A  |
+// | N/A  |     F1    |   F2     |   F3    |    F4      | F5/M  |   | F6     | F7       |  F8      |  F9      |   F10     | N/A  |
 // | N/A  |   LCTRL   |  LSHIFT  |   LGUI  |    LALT    | BTCLR |   | F11    | F12      |  PSCRN   |  INS     |   DEL     | N/A  |
 // | N/A  |    BT1    |  BT2     |   BT3   |    BT4     |  BT5  |   | C_MUTE | C_VOL_UP | C_VOL_DN | C_BRI_UP | C_BRI_DN  | N/A  |
 //                               |    TAB  |   DEL/BKP  |  ENT  |   | SPC    |  sticky  |   MAIN   |
                         bindings = <
-   &none  &kp F1       &kp F2       &kp F3       &kp F4       &kp F5            &kp F6     &kp F7        &kp F8        &kp F9       &kp F10       &none
+   &none  &kp F1       &kp F2       &kp F3       &kp F4       &td_main 00 F5    &kp F6     &kp F7        &kp F8        &kp F9       &kp F10       &none
    &none  &kp LCTRL    &kp LSHFT    &kp LGUI     &kp LALT     &bt BT_CLR        &kp F11    &kp F12       &kp PSCRN     &kp INS      &kp DEL       &none
    &none  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &kp C_MUTE &kp C_VOL_UP  &kp C_VOL_DN  &kp C_BRI_UP &kp C_BRI_DN  &none
                                     &kp TAB      &sm_bk_del   &kp RET           &kp SPACE  &td_mt        &to 0
