@@ -243,8 +243,7 @@
 //                          |  TAB   | DEL/BKP |  ENT   |       | None  | None  | None  |
                         bindings = <
    &none  &cmb1  &mod_st LSHFT LSHFT  &kp UP       &mod_st LALT LALT   &td_main 0 HOME         &none  &none  &none  &none  &none  &none
-   //&none  &cmb2  &kp LEFT             &kp DOWN     &kp RIGHT           &kp END                 &none  &none  &none  &none  &none  &none
-   &none  &cmb2  &kp LEFT             &kp DOWN     &kp RIGHT           &kp C                 &none  &none  &none  &none  &none  &none
+   &none  &cmb2  &kp LEFT             &kp DOWN     &kp RIGHT           &kp END                 &none  &none  &none  &none  &none  &none
    &none  &cmb3  &cut                 &copy        &paste              &mod_st LGUI LGUI       &none  &none  &none  &none  &none  &none
                                       &kp TAB      &sm_bk_del          &kp RET                 &none  &none  &none  
                         >;
