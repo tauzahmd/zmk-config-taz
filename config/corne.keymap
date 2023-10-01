@@ -237,14 +237,14 @@
                 };
                 nav_layer {
 // -------------------------------------------------------------------------------------------------------------------------------
-// | N/A  |  CMB1  |  SHFT  |  UP    | ALT     | HOME/M |       | None  | None  | None  | None  | None  |
-// | N/A  |  CMB2  |  LEFT  |  DOWN  | RIGHT   | END    |       | None  | None  | None  | None  | None  |
-// | N/A  |  CMB3  |  CUT   | COPY   | PASTE   | WIN    |       | None  | None  | None  | None  | None  |
+// | N/A  |  CMB1  |  SHFT  |  UP    | ALT     | HOME/M |       | None  | None  | None  | None  | None  | None  |
+// | N/A  |  CMB2  |  LEFT  |  DOWN  | RIGHT   | END    |       | None  | None  | None  | None  | None  | None  |
+// | N/A  |  CMB3  |  CUT   | COPY   | PASTE   | WIN    |       | None  | None  | None  | None  | None  | None  |
 //                          |  TAB   | DEL/BKP |  ENT   |       | None  | None  | None  |
                         bindings = <
-   &none  &cmb1  &mod_st LSHFT LSHFT  &kp UP       &mod_st LALT LALT   &td_main 0 HOME         &none  &none  &none  &none  &none
-   &none  &cmb2  &kp LEFT             &kp DOWN     &kp RIGHT           &bt END                 &none  &none  &none  &none  &none
-   &none  &cmb3  &cut                 &copy        &paste              &mod_st LGUI  LGUI      &none  &none  &none  &none  &none
+   &none  &cmb1  &mod_st LSHFT LSHFT  &kp UP       &mod_st LALT LALT   &td_main 0 HOME         &none  &none  &none  &none  &none  &none
+   &none  &cmb2  &kp LEFT             &kp DOWN     &kp RIGHT           &bt END                 &none  &none  &none  &none  &none  &none
+   &none  &cmb3  &cut                 &copy        &paste              &mod_st LGUI  LGUI      &none  &none  &none  &none  &none  &none
                                       &kp TAB      &sm_bk_del          &kp RET                 &none  &none  &none  
                         >;
                 };
