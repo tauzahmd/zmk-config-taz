@@ -78,32 +78,23 @@
     };
 };
 / {
-    combo_nav {
+    combos {
         compatible = "zmk,combos";
         combo_nav {
             timeout-ms = <80>;
             key-positions = <25 38>;
             bindings = <&to NAV>;
         };
-    };
-    combo_main {
-        compatible = "zmk,combos";
         combo_main {
             timeout-ms = <80>;
             key-positions = <0 38>;
             bindings = <&to MAIN>;
         };
-    };
-    combo_num {
-        compatible = "zmk,combos";
         combo_num {
             timeout-ms = <80>;
             key-positions = <2 38>;
             bindings = <&to NUM>;
         };
-    };
-    combo_sys {
-        compatible = "zmk,combos";
         combo_sys {
             timeout-ms = <80>;
             key-positions = <4 38>;
