@@ -81,9 +81,33 @@
     combos {
         compatible = "zmk,combos";
         combo_nav {
-            timeout-ms = <50>;
+            timeout-ms = <80>;
             key-positions = <25 38>;
             bindings = <&to NAV>;
+        };
+    };
+    combos {
+        compatible = "zmk,combos";
+        combo_main {
+            timeout-ms = <80>;
+            key-positions = <0 38>;
+            bindings = <&to MAIN>;
+        };
+    };
+    combos {
+        compatible = "zmk,combos";
+        combo_num {
+            timeout-ms = <80>;
+            key-positions = <2 38>;
+            bindings = <&to NUM>;
+        };
+    };
+    combos {
+        compatible = "zmk,combos";
+        combo_sys {
+            timeout-ms = <80>;
+            key-positions = <4 38>;
+            bindings = <&to SYS>;
         };
     };
 };
@@ -134,6 +158,14 @@
                         mods = <(MOD_LSFT|MOD_RSFT)>;
                         keep-mods = <(MOD_RSFT)>;
                 };
+                sm_lgt: shift_mod_brc {
+                        compatible = "zmk,behavior-mod-morph";
+                        label = "SHIFT_MOD_LGT";
+                        #binding-cells = <0>;
+                        bindings = <&kp LT>, <&kp GT>;
+                        mods = <(MOD_LSFT|MOD_RSFT)>;
+                        keep-mods = <(MOD_RSFT)>;
+                };
                 sm_rt_cap: shift_mod_ret_cap {
                         compatible = "zmk,behavior-mod-morph";
                         label = "SHIFT_MOD_RET_CAP";
@@ -141,6 +173,7 @@
                         bindings = <&kp RET>, <&kp CAPS>;
                         mods = <(MOD_LSFT)>;
                 };
+                // This is no longer in use
                 sl_no_tab: shift_mod_no_tab {
                         compatible = "zmk,behavior-mod-morph";
                         label = "SHIFT_MOD_LAYER_NO_TAB";
@@ -165,6 +198,7 @@
                         tapping-term-ms = <300>;
                         bindings = <&stk RALT RSHIFT>, <&sk RCTRL>;
                 };
+                // This is no longer in use
                 sh_ma: shift_mod_main_layer {
                         compatible = "zmk,behavior-mod-morph";
                         label = "SHIFT_MOD_MAIN_LAYER";
@@ -199,40 +233,40 @@
 // | N/A  |  ESC/Q    |  W       |  E      |  R        |    T    |   |  Y  |    U        |   I      |   O      |  P        | N/A  |
 // | N/A  |  A/LCTRL  | S/LSHIFT |  D/LGUI |  F/LALT   | G/LCTRL |   |  H  |   J/RALT    |  K/RGUI  | L/RSHIFT |  ;/RCTRL  | N/A  |
 // | N/A  |  Z        |  X       |  C      |  V        |    B    |   |  N  |   M         |  ,       |  .       |  /        | N/A  |
-//                               | TAB/NUM |  DEL/BKP  | ENT/CAP |   | SPC |   sticky    |  SYS     |
+//                               |  TAB    |  DEL/BKP  | ENT/CAP |   | SPC |   sticky    |  ESC     |
                         bindings = <
    &none &mt ESC Q    &kp W         &kp E         &kp R         &kp T           &kp Y     &kp U        &kp I           &kp O         &kp P           &none
    &none &bhm LCTRL A &bhm LSHIFT S &bhm LGUI D   &bhm LALT F   &bhm LCTRL G    &kp H     &bhm RALT J  &bhm RGUI K     &bhm RSHIFT L &bhm RCTRL SEMI &none
    &none &kp Z        &kp X         &kp C         &kp V         &kp B           &kp N     &kp M        &kp COMMA       &kp DOT       &kp FSLH        &none
-                                    &sl_no_tab    &sm_bk_del    &sm_rt_cap      &kp SPACE &td_mt       &sh_ma
+                                    &kp TAB       &sm_bk_del    &sm_rt_cap      &kp SPACE &td_mt       &kp ESC
                         >;
                 };
 
                 lower_layer {
 // -----------------------------------------------------------------------------------------------------------------------------------
-// | N/A  |    7     |   8      |   9       |     0      |HOME/M |   |    /       |   PG_UP    |  UP     |  PG_DN   |   '/"   | N/A  |
+// | N/A  |    7     |   8      |   9       |     0      |HOME/M |   |    ~       |   PG_UP    |  UP     |  PG_DN   |   '/"   | N/A  |
 // | N/A  |  4/LCTRL | 5/LSHIFT |   6/LGUI  |   LALT     |  END  |   | "\" / "|"  |   LEFT     |  DOWN   |  RIGHT   |   ;     | N/A  |
-// | N/A  |   1      |  2       |   3       |    =/+     |  -/_  |   |     [/]    |    (/)     |   {/}   |    .     |    ~    | N/A  |
-//                              |    TAB    |  DEL/BKP   |  ENT  |   |    SPC     |    sticky  |   MAIN  |
+// | N/A  |   1      |  2       |   3       |    =/+     |  -/_  |   |     [/]    |    (/)     |   {/}   |    .     |    /    | N/A  |
+//                              |    TAB    |  DEL/BKP   |  ENT  |   |    SPC     |    sticky  |   </>   |
                        bindings = <
-   &none &kp N7        &kp N8         &kp N9         &kp N0        &td_main 0 HOME   &kp FSLH        &kp PG_UP      &kp UP       &kp PG_DN  &kp SQT    &none
+   &none &kp N7        &kp N8         &kp N9         &kp N0        &td_main 0 HOME   &kp GRAVE       &kp PG_UP      &kp UP       &kp PG_DN  &kp SQT    &none
    &none &bhm LCTRL N4 &bhm LSHIFT N5 &bhm LGUI N6   &kp LALT      &kp END           &kp BSLH        &kp LEFT       &kp DOWN     &kp RIGHT  &kp SEMI   &none
-   &none &kp N1        &kp N2         &kp N3         &kp EQUAL     &kp MINUS         &sm_bkt         &sm_par        &sm_brc      &kp DOT    &kp GRAVE  &none
-                                      &kp TAB        &sm_bk_del    &kp RET           &kp SPACE       &td_mt         &to 0
+   &none &kp N1        &kp N2         &kp N3         &kp EQUAL     &kp MINUS         &sm_bkt         &sm_par        &sm_brc      &kp DOT    &kp FSLH   &none
+                                      &kp TAB        &sm_bk_del    &kp RET           &kp SPACE       &td_mt         &sm_lgt
                         >;
                 };
 
                 raise_layer {
 // -------------------------------------------------------------------------------------------------------------------------------
 // | N/A  |     F1    |   F2     |   F3    |    F4      | F5/M  |   | F6     | F7       |  F8      |  F9      |   F10     | N/A  |
-// | N/A  |   LCTRL   |  LSHIFT  |   LGUI  |    LALT    | BTCLR |   | F11    | F12      |  PSCRN   |  INS     |   DEL     | N/A  |
+// | N/A  |   LCTRL   |  LSHIFT  |   LGUI  |    LALT    |INSERT |   | F11    | F12      |  PSCRN   |  INS     |   DEL     | N/A  |
 // | N/A  |    BT1    |  BT2     |   BT3   |    BT4     |  BT5  |   | C_MUTE | C_VOL_UP | C_VOL_DN | C_BRI_UP | C_BRI_DN  | N/A  |
-//                               |    TAB  |   DEL/BKP  |  ENT  |   | SPC    |  sticky  |   MAIN   |
+//                               |    TAB  |   DEL/BKP  |  ENT  |   | SPC    |  sticky  |  BTCLR   |
                         bindings = <
    &none  &kp F1       &kp F2       &kp F3       &kp F4       &td_main 0  F5    &kp F6     &kp F7        &kp F8        &kp F9       &kp F10       &none
-   &none  &kp LCTRL    &kp LSHFT    &kp LGUI     &kp LALT     &bt BT_CLR        &kp F11    &kp F12       &kp PSCRN     &kp INS      &kp DEL       &none
+   &none  &kp LCTRL    &kp LSHFT    &kp LGUI     &kp LALT     &kp INS           &kp F11    &kp F12       &kp PSCRN     &kp INS      &kp DEL       &none
    &none  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &kp C_MUTE &kp C_VOL_UP  &kp C_VOL_DN  &kp C_BRI_UP &kp C_BRI_DN  &none
-                                    &kp TAB      &sm_bk_del   &kp RET           &kp SPACE  &td_mt        &to 0
+                                    &kp TAB      &sm_bk_del   &kp RET           &kp SPACE  &td_mt        &bt BT_CLR
                         >;
                 };
                 nav_layer {
