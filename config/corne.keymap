@@ -16,7 +16,7 @@
 / {
     macros {
         cmb1: cmb1 {
-            label = "ZM_cmb1";
+            label = "ZM_CMB1";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -26,7 +26,7 @@
                 ;
         };
         cmb2: cmb2 {
-            label = "ZM_cmb2";
+            label = "ZM_CMB2";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -36,7 +36,7 @@
                 ;
         };
         cmb3: cmb3 {
-            label = "ZM_cmb3";
+            label = "ZM_CMB3";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -46,7 +46,7 @@
                 ;
         };
         cut: cut {
-            label = "ZM_cut";
+            label = "ZM_CUT";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -56,7 +56,7 @@
                 ;
         };
         copy: copy {
-            label = "ZM_copy";
+            label = "ZM_COPY";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -66,7 +66,7 @@
                 ;
         };
         paste: paste {
-            label = "ZM_paste";
+            label = "ZM_PASTE";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -158,7 +158,7 @@
                         mods = <(MOD_LSFT|MOD_RSFT)>;
                         keep-mods = <(MOD_RSFT)>;
                 };
-                sm_lgt: shift_mod_brc {
+                sm_lgt: shift_mod_lgt {
                         compatible = "zmk,behavior-mod-morph";
                         label = "SHIFT_MOD_LGT";
                         #binding-cells = <0>;
