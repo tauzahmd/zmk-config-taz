@@ -87,17 +87,17 @@
         };
         combo_main {
             timeout-ms = <80>;
-            key-positions = <0 38>;
+            key-positions = <1 38>;
             bindings = <&to MAIN>;
         };
         combo_num {
             timeout-ms = <80>;
-            key-positions = <2 38>;
+            key-positions = <3 38>;
             bindings = <&to NUM>;
         };
         combo_sys {
             timeout-ms = <80>;
-            key-positions = <4 38>;
+            key-positions = <5 38>;
             bindings = <&to SYS>;
         };
     };
