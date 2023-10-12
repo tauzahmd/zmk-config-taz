@@ -80,24 +80,44 @@
 / {
     combos {
         compatible = "zmk,combos";
-        combo_nav {
+        combo_nav_left {
             timeout-ms = <80>;
             key-positions = <25 38>;
             bindings = <&to NAV>;
         };
-        combo_main {
+        combo_main_left {
             timeout-ms = <80>;
             key-positions = <1 38>;
             bindings = <&to MAIN>;
         };
-        combo_num {
+        combo_num_left {
             timeout-ms = <80>;
             key-positions = <3 38>;
             bindings = <&to NUM>;
         };
-        combo_sys {
+        combo_sys_left {
             timeout-ms = <80>;
             key-positions = <5 38>;
+            bindings = <&to SYS>;
+        };
+        combo_nav_right {
+            timeout-ms = <80>;
+            key-positions = <34 39>;
+            bindings = <&to NAV>;
+        };
+        combo_main_right {
+            timeout-ms = <80>;
+            key-positions = <10 39>;
+            bindings = <&to MAIN>;
+        };
+        combo_num_right {
+            timeout-ms = <80>;
+            key-positions = <8 39>;
+            bindings = <&to NUM>;
+        };
+        combo_sys_right {
+            timeout-ms = <80>;
+            key-positions = <6 39>;
             bindings = <&to SYS>;
         };
     };
