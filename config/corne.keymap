@@ -13,6 +13,7 @@
 #define NUM   1
 #define SYS   2
 #define NAV   3
+#define STICKY 4
 
 / {
     macros {
@@ -197,6 +198,7 @@
                         mods = <(MOD_LSFT|MOD_RSFT)>;
                         keep-mods = <(MOD_RSFT)>;
                 };
+                // This is no longer in use
                 stk: sticky_s_c_a {
                         compatible = "zmk,behavior-hold-tap";
                         #binding-cells = <2>;
@@ -205,6 +207,7 @@
                         flavor = "tap-preferred";
                         bindings = <&sk>, <&sk>;
                 };
+                // This is no longer in use
                 td_mt: tap_dance_mod_tap {
                         compatible = "zmk,behavior-tap-dance";
                         #binding-cells = <0>;
@@ -248,7 +251,7 @@
    &none &mt ESC Q    &kp W         &kp E         &kp R         &kp T           &kp Y     &kp U        &kp I           &kp O         &kp P           &none
    &none &bhm LCTRL A &bhm LSHIFT S &bhm LGUI D   &bhm LALT F   &bhm LCTRL G    &kp H     &bhm RALT J  &bhm RGUI K     &bhm RSHIFT L &bhm RCTRL SEMI &none
    &none &kp Z        &kp X         &kp C         &kp V         &kp B           &kp N     &kp M        &kp COMMA       &kp DOT       &kp FSLH        &none
-                                    &kp TAB       &sm_bk_del    &sm_rt_cap      &kp SPACE &td_mt       &kp ESC
+                                    &kp TAB       &sm_bk_del    &sm_rt_cap      &kp SPACE &sl STICKY       &kp ESC
                         >;
                 };
 
@@ -262,7 +265,7 @@
    &none &kp N7        &kp N8         &kp N9         &kp N0        &td_main 0 HOME   &kp GRAVE       &kp PG_UP      &kp UP       &kp PG_DN  &kp SQT    &none
    &none &bhm LCTRL N4 &bhm LSHIFT N5 &bhm LGUI N6   &kp LALT      &kp END           &kp BSLH        &kp LEFT       &kp DOWN     &kp RIGHT  &kp SEMI   &none
    &none &kp N1        &kp N2         &kp N3         &kp MINUS     &kp EQUAL         &sm_bkt         &sm_par        &sm_brc      &kp DOT    &kp FSLH   &none
-                                      &kp TAB        &sm_bk_del    &kp RET           &kp SPACE       &td_mt         &sm_lgt
+                                      &kp TAB        &sm_bk_del    &kp RET           &kp SPACE       &sl STICKY         &sm_lgt
                         >;
                 };
 
@@ -276,7 +279,7 @@
    &none  &kp F1       &kp F2       &kp F3       &kp F4       &td_main 0  F5    &kp F6     &kp F7        &kp F8        &kp F9       &kp F10       &none
    &none  &kp LCTRL    &kp LSHFT    &kp LGUI     &kp LALT     &kp INS           &kp F11    &kp F12       &kp PSCRN     &kp INS      &kp DEL       &none
    &none  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &kp C_MUTE &kp C_VOL_UP  &kp C_VOL_DN  &kp C_BRI_UP &kp C_BRI_DN  &none
-                                    &kp TAB      &sm_bk_del   &kp RET           &kp SPACE  &td_mt        &bt BT_CLR
+                                    &kp TAB      &sm_bk_del   &kp RET           &kp SPACE  &sl STICKY        &bt BT_CLR
                         >;
                 };
                 nav_layer {
@@ -290,6 +293,19 @@
    &none  &cmb2  &kp LEFT             &kp DOWN     &kp RIGHT           &kp END                 &mkp MB5   &none      &none      &none      &none  &none
    &none  &cmb3  &cut                 &copy        &paste              &mod_st LGUI LGUI       &none      &mkp LCLK  &mkp MCLK  &mkp RCLK  &none  &none
                                       &kp TAB      &sm_bk_del          &kp RET                 &none      &none      &none  
+                        >;
+                };
+                sticky_layer {
+// -------------------------------------------------------------------------------------------------------------------------------
+// | N/A  |  CMB1  |  SHFT  |  UP    | ALT     | HOME/M |       | MB4   | None  | None  | None  | None  | None  |
+// | N/A  |  CMB2  |  LEFT  |  DOWN  | RIGHT   | END    |       | MB5   | None  | None  | None  | None  | None  |
+// | N/A  |  CMB3  |  CUT   | COPY   | PASTE   | WIN    |       | None  | LCLK  | MCLK  | RCLK  | None  | None  |
+//                          |  TAB   | DEL/BKP |  ENT   |       | None  | None  | None  |
+                        bindings = <
+   &none   &none       &none        &none       &none         &none         &none   &none         &none         &none          &none      &none
+   &none   &sk LCTRL   &sk LSHFT    &sk LGUI     &sk LALT     &none         &none   &sk RALT      &sk RGUI      &sk RSHIFT     &sk RCTRL  &none
+   &none   &none       &none        &none        &none        &none         &none   &none         &none         &none          &none      &none
+                                    &none        &none        &none         &none   &none         &none  
                         >;
                 };
 
