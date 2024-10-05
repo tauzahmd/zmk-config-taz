@@ -197,6 +197,7 @@
                         mods = <(MOD_LSFT|MOD_RSFT)>;
                         keep-mods = <(MOD_RSFT)>;
                 };
+                // This is not being used
                 stk: sticky_s_c_a {
                         compatible = "zmk,behavior-hold-tap";
                         #binding-cells = <2>;
@@ -209,7 +210,7 @@
                         compatible = "zmk,behavior-tap-dance";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&stk RALT RSHIFT>, <&sk RCTRL>;
+                        bindings = <&mt RALT RSHIFT>, <&sk RCTRL>;
                 };
                 // This is no longer in use
                 sh_ma: shift_mod_main_layer {
