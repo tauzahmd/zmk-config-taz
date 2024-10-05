@@ -17,7 +17,6 @@
 / {
     macros {
         cmb1: cmb1 {
-            label = "ZM_CMB1";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -27,7 +26,6 @@
                 ;
         };
         cmb2: cmb2 {
-            label = "ZM_CMB2";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -37,7 +35,6 @@
                 ;
         };
         cmb3: cmb3 {
-            label = "ZM_CMB3";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -47,7 +44,6 @@
                 ;
         };
         cut: cut {
-            label = "ZM_CUT";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -57,7 +53,6 @@
                 ;
         };
         copy: copy {
-            label = "ZM_COPY";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -67,7 +62,6 @@
                 ;
         };
         paste: paste {
-            label = "ZM_PASTE";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -147,7 +141,6 @@
         behaviors {
                 bhm: balanced_homerow_mods {
                         compatible = "zmk,behavior-hold-tap";
-                        label = "HOMEROW_MODS";
                         #binding-cells = <2>;
                         tapping-term-ms = <300>;
                         quick-tap-ms = <200>;
@@ -157,7 +150,6 @@
                 };
                 sm_bk_del: shift_mod_bkps_del {
                         compatible = "zmk,behavior-mod-morph";
-                        label = "SHIFT_MOD_BKPS_DEL";
                         #binding-cells = <0>;
                         bindings = <&kp BSPC>, <&kp DEL>;
                         mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -165,7 +157,6 @@
                 };
                 sm_bkt: shift_mod_bkt {
                         compatible = "zmk,behavior-mod-morph";
-                        label = "SHIFT_MOD_BKT";
                         #binding-cells = <0>;
                         bindings = <&kp LBKT>, <&kp RBKT>;
                         mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -173,7 +164,6 @@
                 };
                 sm_par: shift_mod_par {
                         compatible = "zmk,behavior-mod-morph";
-                        label = "SHIFT_MOD_PAR";
                         #binding-cells = <0>;
                         bindings = <&kp LPAR>, <&kp RPAR>;
                         mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -181,7 +171,6 @@
                 };
                 sm_brc: shift_mod_brc {
                         compatible = "zmk,behavior-mod-morph";
-                        label = "SHIFT_MOD_BRC";
                         #binding-cells = <0>;
                         bindings = <&kp LBRC>, <&kp RBRC>;
                         mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -189,7 +178,6 @@
                 };
                 sm_lgt: shift_mod_lgt {
                         compatible = "zmk,behavior-mod-morph";
-                        label = "SHIFT_MOD_LGT";
                         #binding-cells = <0>;
                         bindings = <&kp LT>, <&kp GT>;
                         mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -197,7 +185,6 @@
                 };
                 sm_rt_cap: shift_mod_ret_cap {
                         compatible = "zmk,behavior-mod-morph";
-                        label = "SHIFT_MOD_RET_CAP";
                         #binding-cells = <0>;
                         bindings = <&kp RET>, <&kp CAPS>;
                         mods = <(MOD_LSFT)>;
@@ -205,7 +192,6 @@
                 // This is no longer in use
                 sl_no_tab: shift_mod_no_tab {
                         compatible = "zmk,behavior-mod-morph";
-                        label = "SHIFT_MOD_LAYER_NO_TAB";
                         #binding-cells = <0>;
                         bindings = <&to NUM>, <&kp TAB>;
                         mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -213,7 +199,6 @@
                 };
                 stk: sticky_s_c_a {
                         compatible = "zmk,behavior-hold-tap";
-                        label = "STICKY_S_C_A";
                         #binding-cells = <2>;
                         tapping-term-ms = <150>;
                         quick-tap-ms = <0>;
@@ -222,7 +207,6 @@
                 };
                 td_mt: tap_dance_mod_tap {
                         compatible = "zmk,behavior-tap-dance";
-                        label = "TAP_DANCE_MOD_TAP";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
                         bindings = <&stk RALT RSHIFT>, <&sk RCTRL>;
@@ -230,14 +214,12 @@
                 // This is no longer in use
                 sh_ma: shift_mod_main_layer {
                         compatible = "zmk,behavior-mod-morph";
-                        label = "SHIFT_MOD_MAIN_LAYER";
                         #binding-cells = <0>;
                         bindings = <&to SYS>, <&kp MAIN>;
                         mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
                 td_main: to_main_layer {
                         compatible = "zmk,behavior-hold-tap";
-                        label = "TO_MAIN_LAYER";
                         #binding-cells = <2>;
                         tapping-term-ms = <200>;
                         quick-tap-ms = <0>;
@@ -246,7 +228,6 @@
                 };
                 mod_st: mod_st {
                         compatible = "zmk,behavior-hold-tap";
-                        label = "mod_sticky";
                         #binding-cells = <2>;
                         tapping-term-ms = <200>;
                         quick-tap-ms = <0>;
