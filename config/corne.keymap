@@ -257,13 +257,13 @@
 
                 lower_layer {
 // -----------------------------------------------------------------------------------------------------------------------------------
-// | N/A  |    7     |   8      |   9       |     0      |HOME/M |   |    ~       |   PG_UP    |  UP     |  PG_DN   |   '/"   | N/A  |
-// | N/A  |  4/LCTRL | 5/LSHIFT |   6/LGUI  |   LALT     |  END  |   | "\" / "|"  |   LEFT     |  DOWN   |  RIGHT   |   ;     | N/A  |
-// | N/A  |   1      |  2       |   3       |    -/_     |  =/+  |   |     [/]    |    (/)     |   {/}   |    .     |    /    | N/A  |
+// | N/A  |    7     |   8      |   9       |     0      |HOME/M |   |    ~       |   PG_UP    |  UP     |  PG_DN   |  "\" / "|" | N/A  |
+// | N/A  |  4/LCTRL | 5/LSHIFT |   6/LGUI  |   LALT     |  END  |   |    '/"     |   LEFT     |  DOWN   |  RIGHT   |   ;        | N/A  |
+// | N/A  |   1      |  2       |   3       |    -/_     |  =/+  |   |     [/]    |    (/)     |   {/}   |    .     |    /       | N/A  |
 //                              |    TAB    |  DEL/BKP   |  ENT  |   |    SPC     |    sticky  |   </>   |
                        bindings = <
-   &none &kp N7        &kp N8         &kp N9         &kp N0        &td_main 0 HOME   &kp GRAVE       &kp PG_UP      &kp UP       &kp PG_DN  &kp SQT    &none
-   &none &bhm LCTRL N4 &bhm LSHIFT N5 &bhm LGUI N6   &kp LALT      &kp END           &kp BSLH        &kp LEFT       &kp DOWN     &kp RIGHT  &kp SEMI   &none
+   &none &kp N7        &kp N8         &kp N9         &kp N0        &td_main 0 HOME   &kp GRAVE       &kp PG_UP      &kp UP       &kp PG_DN  &kp BSLH   &none
+   &none &bhm LCTRL N4 &bhm LSHIFT N5 &bhm LGUI N6   &kp LALT      &kp END           &kp SQT         &kp LEFT       &kp DOWN     &kp RIGHT  &kp SEMI   &none
    &none &kp N1        &kp N2         &kp N3         &kp MINUS     &kp EQUAL         &sm_bkt         &sm_par        &sm_brc      &kp DOT    &kp FSLH   &none
                                       &kp TAB        &sm_bk_del    &kp RET           &kp SPACE       &sl STICKY         &sm_lgt
                         >;
@@ -297,10 +297,10 @@
                 };
                 sticky_layer {
 // -------------------------------------------------------------------------------------------------------------------------------
-// | N/A  |  CMB1  |  SHFT  |  UP    | ALT     | HOME/M |       | MB4   | None  | None  | None  | None  | None  |
-// | N/A  |  CMB2  |  LEFT  |  DOWN  | RIGHT   | END    |       | MB5   | None  | None  | None  | None  | None  |
-// | N/A  |  CMB3  |  CUT   | COPY   | PASTE   | WIN    |       | None  | LCLK  | MCLK  | RCLK  | None  | None  |
-//                          |  TAB   | DEL/BKP |  ENT   |       | None  | None  | None  |
+// | None  | None  | None  | None  | None  | None  |       | None  | None  | None  | None  | None  | None  |
+// | None  | None  | None  | None  | None  | None  |       | None  | None  | None  | None  | None  | None  |
+// | None  | None  | None  | None  | None  | None  |       | None  | None  | None  | None  | None  | None  |
+//                         | None  | None  | None  |       | None  | None  | None  |
                         bindings = <
    &none   &none       &none        &none       &none         &none         &none   &none         &none         &none          &none      &none
    &none   &sk LCTRL   &sk LSHFT    &sk LGUI     &sk LALT     &none         &none   &sk RALT      &sk RGUI      &sk RSHIFT     &sk RCTRL  &none
