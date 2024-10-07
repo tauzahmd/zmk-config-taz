@@ -135,7 +135,7 @@
     };
 };
 &sk {
-        release-after-ms = <2000>;
+        release-after-ms = <3500>;
         // /delete-property/ ignore-modifiers;
 };
 / {
