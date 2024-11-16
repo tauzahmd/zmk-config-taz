@@ -302,7 +302,7 @@
 // | None  | None  | None  | None  | None  | None  |       | None  | None  | None  | None  | None  | None  |
 //                         | None  | None  | None  |       | None  | None  | None  |
                         bindings = <
-   &none   &none       &none        &none       &none         &none         &none   &none         &none         &none          &none      &none
+   &none   &N1         &N2          &N3          &N4          &N5           &N6     &N7           &N8           &N9            &N0      &none
    &none   &sk LCTRL   &sk LSHFT    &sk LGUI     &sk LALT     &none         &none   &sk RALT      &sk RGUI      &sk RSHIFT     &sk RCTRL  &none
    &none   &none       &none        &none        &none        &none         &none   &none         &none         &none          &none      &none
                                     &none        &none        &none         &none   &none         &none  
