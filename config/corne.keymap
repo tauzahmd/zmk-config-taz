@@ -263,10 +263,10 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------------------------------------------
-// | N/A  |  ESC/Q    |  W       |  E      |  R        |    T    |   |  Y  |    U        |   I      |   O      |  P        | N/A  |
-// | N/A  |  A/LCTRL  | S/LSHIFT |  D/LGUI |  F/LALT   | G/LCTRL |   |  H  |   J/RALT    |  K/RGUI  | L/RSHIFT |  ;/RCTRL  | N/A  |
-// | N/A  |  Z        |  X       |  C      |  V        |    B    |   |  N  |   M         |  ,       |  .       |  /        | N/A  |
-//                               |  TAB    |  DEL/BKP  | ENT/CAP |   | SPC |   sticky    |  ESC     |
+// | N/A  |  ESC/Q    |  W       |  E      |  R        |    T     |   |  Y         |    U        |   I      |   O      |  P        | N/A  |
+// | N/A  |  A/LCTRL  | S/LSHIFT |  D/LGUI |  F/LALT   | G/<LHRM> |   |  H <RHRM>  |   J/RALT    |  K/RGUI  | L/RSHIFT |  ;/RCTRL  | N/A  |
+// | N/A  |  Z        |  X       |  C      |  V        |    B     |   |  N         |   M         |  ,       |  .       |  /        | N/A  |
+//                               |  TAB    |  DEL/BKP  | ENT/CAP  |   | SPC        |   sticky    |  ESC     |
                         bindings = <
    &none &mt ESC Q    &kp W         &kp E         &kp R         &kp T           &kp Y          &kp U        &kp I           &kp O         &kp P           &none
    &none &bhm LCTRL A &bhm LSHIFT S &bhm LGUI D   &bhm LALT F   &lhm RHRM G    &lhm LHRM H    &bhm RALT J  &bhm RGUI K     &bhm RSHIFT L &bhm RCTRL SEMI &none
@@ -276,6 +276,7 @@
                 };
 
                 lower_layer {
+// This should be removed, once I feel this no longer needed
 // -----------------------------------------------------------------------------------------------------------------------------------
 // | N/A  |    7     |   8      |   9       |     0      |HOME/M |   |    ~       |   PG_UP    |  UP     |  PG_DN   |  "\" / "|" | N/A  |
 // | N/A  |  4/LCTRL | 5/LSHIFT |   6/LGUI  |   LALT     |  END  |   |    '/"     |   LEFT     |  DOWN   |  RIGHT   |   ;        | N/A  |
@@ -309,10 +310,10 @@
 // | N/A  |  CMB3  |  CUT   | COPY   | PASTE   | WIN    |       | None  | LCLK  | MCLK  | RCLK  | None  | None  |
 //                          |  TAB   | DEL/BKP |  ENT   |       | None  | None  | None  |
                         bindings = <
-   &none  &none         &none        &none        &none         &none     &mkp MB4   &msc SCRL_LEFT   &msc SCRL_UP   &msc SCRL_DOWN  &msc SCRL_RIGHT  &none
-   &none  &kp LCTRL     &kp LSHFT    &kp LGUI     &kp LALT      &none     &mkp MB5   &mmv MOVE_LEFT   &mmv MOVE_UP   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none
-   &none  &none         &cut         &copy        &paste        &none     &none      &kp LEFT         &kp UP         &kp DOWN        &kp RIGHT        &none
-                                     &kp TAB      &sm_bk_del    &kp RET   &mkp LCLK  &mkp MCLK        &mkp RCLK 
+   &none  &none         &kp PG_DN    &kp PG_UP    &none         &kp HOME      &mkp MB4   &msc SCRL_LEFT   &msc SCRL_UP   &msc SCRL_DOWN  &msc SCRL_RIGHT  &none
+   &none  &kp LCTRL     &kp LSHFT    &kp LGUI     &kp LALT      &kp END       &mkp MB5   &mmv MOVE_LEFT   &mmv MOVE_UP   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none
+   &none  &none         &cut         &copy        &paste        &none         &none      &kp LEFT         &kp UP         &kp DOWN        &kp RIGHT        &none
+                                     &kp TAB      &sm_bk_del    &kp RET       &mkp LCLK  &mkp MCLK        &mkp RCLK 
                         >;
                 };
                 sticky_layer {
@@ -336,9 +337,9 @@
 //                         | None  | None  | None  |       | None  | None  | None  |
                         bindings = <
    &none   &kp N7   &kp N8     &kp N9       &kp N0       &none           &none   &none      &none     &none  &none     &none
-   &none   &kp N4   &kp N5     &kp N6       &sk LSHFT    &none           &none   &none      &none     &none  &none     &none
+   &none   &kp N4   &kp N5     &kp N6       &sk LGUI     &none           &none   &none      &none     &none  &none     &none
    &none   &kp N1   &kp N2     &kp N3       &none        &none           &none   &none      &none     &none  &none     &none
-                               &sk LCTRL    &sk LALT     &sk LGUI        &none   &none      &none  
+                               &sk LCTRL    &sk LALT     &sk LSHFT       &none   &none      &none  
                         >;
                 };
                 rhrm_layer {
@@ -349,15 +350,15 @@
 //                         | None  | None  | None  |       | None  | None  | None  |
                         bindings = <
    &none   &none   &none     &none       &none    &none        &kp GRAVE     &none          &kp LBKT    &kp RBKT   &kp BSLH     &none
-   &none   &none   &none     &none       &none    &none        &none         &sk RSHIFT     &none       &kp SEMI   &kp APOS     &none
+   &none   &none   &none     &none       &none    &none        &none         &sk RGUI       &none       &kp SEMI   &kp APOS     &none
    &none   &none   &none     &none       &none    &none        &kp MINUS     &kp EQUAL      &kp COMMA   &kp DOT    &kp FSLH     &none
-                             &none       &none    &none        &sk RGUI      &sk RALT       &sk RCTRL
-
+                             &none       &none    &none        &sk RSHIFT    &sk RALT       &sk RCTRL
                         >;
                 };
         };
 };
 
+// Not used anywhere
 // Combo 1 Win + Ctrl
 // Combo 2 Shit + Ctrl
 // Combo 3 Alt + Ctrl
