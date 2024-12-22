@@ -310,7 +310,7 @@
 // | N/A  |  CMB3  |  CUT   | COPY   | PASTE   | WIN    |       | None  | LCLK  | MCLK  | RCLK  | None  | None  |
 //                          |  TAB   | DEL/BKP |  ENT   |       | None  | None  | None  |
                         bindings = <
-   &none  &none         &kp PG_DN    &kp PG_UP    &none         &kp HOME      &msc SCRL_LEFT   &msc SCRL_DOWN   &msc SCRL_UP  &msc SCRL_RIGHT  &mkp MB4    &none
+   &none  &none         &none        &kp PG_UP    &kp PG_DN     &kp HOME      &msc SCRL_LEFT   &msc SCRL_DOWN   &msc SCRL_UP  &msc SCRL_RIGHT  &mkp MB4    &none
    &none  &kp LCTRL     &kp LSHFT    &kp LGUI     &kp LALT      &kp END       &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP  &mmv MOVE_RIGHT  &mkp MB5    &none
    &none  &none         &cut         &copy        &paste        &none         &kp LEFT         &kp DOWN         &kp UP        &kp RIGHT        &none       &none
                                      &kp TAB      &sm_bk_del    &kp RET       &mkp LCLK  &mkp MCLK        &mkp RCLK 
