@@ -326,7 +326,7 @@
    &none   &kp N1      &kp N2       &kp N3       &kp N4       &kp N5        &kp N6  &kp N7        &kp N8        &kp N9         &kp N0     &none
    &none   &sk LCTRL   &sk LSHFT    &sk LGUI     &sk LALT     &none         &none   &sk RALT      &sk RGUI      &sk RSHIFT     &sk RCTRL  &none
    &none   &none       &none        &none        &none        &none         &none   &none         &none         &none          &none      &none
-                                    &none        &none        &none         &none   &none         &none  
+                                    &none        &none        &none         &none   &sk RSHIFT    &none  
                         >;
                 };
                 lhrm_layer {
@@ -336,10 +336,11 @@
 // | None  | None  | None  | None  | None  | None  |       | None  | None  | None  | None  | None  | None  |
 //                         | None  | None  | None  |       | None  | None  | None  |
                         bindings = <
-   &none   &kp N7   &kp N8     &kp N9       &kp N0       &none           &none   &none      &none     &none  &none     &none
-   &none   &kp N4   &kp N5     &kp N6       &sk LGUI     &none           &none   &none      &none     &none  &none     &none
-   &none   &kp N1   &kp N2     &kp N3       &none        &none           &none   &none      &none     &none  &none     &none
-                               &sk LCTRL    &sk LALT     &sk LSHFT       &none   &none      &none  
+   &none   &kp N7   &kp N8     &kp N9       &kp N0       &none           &none         &none          &none     &none  &none     &none
+   &none   &kp N4   &kp N5     &kp N6       &sk LGUI     &none           &none         &none          &none     &none  &none     &none
+   &none   &kp N1   &kp N2     &kp N3       &none        &none           &none         &none          &none     &none  &none     &none
+                               &sk LCTRL    &sk LALT     &sk LSHFT       &sk RSHIFT    &sk RALT       &sk RCTRL
+
                         >;
                 };
                 rhrm_layer {
@@ -349,10 +350,10 @@
 // | None  | None  | None  | None  | None  | None  |       | None  | None  | None  | None  | None  | None  |
 //                         | None  | None  | None  |       | None  | None  | None  |
                         bindings = <
-   &none   &none   &none     &none       &none    &none        &kp GRAVE     &none          &kp LBKT    &kp RBKT   &kp BSLH     &none
-   &none   &none   &none     &none       &none    &none        &none         &sk RGUI       &none       &kp SEMI   &kp APOS     &none
-   &none   &none   &none     &none       &none    &none        &kp MINUS     &kp EQUAL      &kp COMMA   &kp DOT    &kp FSLH     &none
-                             &none       &none    &none        &sk RSHIFT    &sk RALT       &sk RCTRL
+   &none   &none   &none     &none       &none      &none           &kp GRAVE     &none          &kp LBKT    &kp RBKT   &kp BSLH     &none
+   &none   &none   &none     &none       &none      &none           &none         &sk RGUI       &none       &kp SEMI   &kp APOS     &none
+   &none   &none   &none     &none       &none      &none           &kp MINUS     &kp EQUAL      &kp COMMA   &kp DOT    &kp FSLH     &none
+                             &sk LCTRL   &sk LALT   &sk LSHFT       &sk RSHIFT    &sk RALT       &sk RCTRL
                         >;
                 };
         };
