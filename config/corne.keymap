@@ -325,7 +325,7 @@
                         bindings = <
    &none  &none         &none        &kp PG_UP    &kp PG_DN     &kp HOME                        &msc SCRL_LEFT   &msc SCRL_DOWN   &msc SCRL_UP  &msc SCRL_RIGHT  &mkp MB4    &none
    &none  &kp LCTRL     &kp LSHFT    &kp LGUI     &kp LALT      &kp END                         &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP  &mmv MOVE_RIGHT  &mkp MB5    &none
-   &none  &none         &cut         &copy        &paste        &lt &mouse_fast &mouse_slow     &kp LEFT         &kp DOWN         &kp UP        &kp RIGHT        &none       &none
+   &none  &none         &cut         &copy        &paste        &lt mouse_fast mouse_slow       &kp LEFT         &kp DOWN         &kp UP        &kp RIGHT        &none       &none
                                      &kp TAB      &sm_bk_del    &kp RET                         &mkp LCLK  &mkp MCLK        &mkp RCLK 
                         >;
                 };
