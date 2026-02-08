@@ -8,10 +8,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
-
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1000  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
-
 #include <dt-bindings/zmk/pointing.h>
 
 #define MAIN  0
@@ -259,20 +255,20 @@
                 };
                 mouse_slow: mouse_slow {
                         compatible = "zmk,behavior-input-setting";
-                        label = "MOUSE_SLOW";
-                        input-setting = <&mouse {
-                                cursor-speed = <1000>;   // your current
-                                scroll-speed = <20>;
-                        }>;
+                        #binding-cells = <0>;
+
+                        device = <&mouse>;
+                        cursor-speed = <1000>;
+                        scroll-speed = <20>;
                 };
 
                 mouse_fast: mouse_fast {
                         compatible = "zmk,behavior-input-setting";
-                        label = "MOUSE_FAST";
-                        input-setting = <&mouse {
-                                cursor-speed = <3500>;   // turbo
-                                scroll-speed = <90>;
-                        }>;
+                        #binding-cells = <0>;
+
+                        device = <&mouse>;
+                        cursor-speed = <3500>;
+                        scroll-speed = <90>;
                 };
         };
         keymap {
