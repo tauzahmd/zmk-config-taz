@@ -7,6 +7,10 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1000
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20
+
 #include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/pointing.h>
 
@@ -17,6 +21,7 @@
 #define STICKY 4
 #define LHRM  5
 #define RHRM  6
+#define NAV_FAST 7
 
 / {
     macros {
@@ -323,12 +328,22 @@
 // | N/A  |  CMB3  |  CUT   | COPY   | PASTE   | WIN    |       | None  | LCLK  | MCLK  | RCLK  | None  | None  |
 //                          |  TAB   | DEL/BKP |  ENT   |       | None  | None  | None  |
                         bindings = <
-   &none  &none         &none        &kp PG_UP    &kp PG_DN     &kp HOME                        &msc SCRL_LEFT   &msc SCRL_DOWN   &msc SCRL_UP  &msc SCRL_RIGHT  &mkp MB4    &none
-   &none  &kp LCTRL     &kp LSHFT    &kp LGUI     &kp LALT      &kp END                         &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP  &mmv MOVE_RIGHT  &mkp MB5    &none
-   &none  &none         &cut         &copy        &paste        &lt mouse_fast mouse_slow       &kp LEFT         &kp DOWN         &kp UP        &kp RIGHT        &none       &none
-                                     &kp TAB      &sm_bk_del    &kp RET                         &mkp LCLK  &mkp MCLK        &mkp RCLK 
+   &none  &none         &none        &kp PG_UP    &kp PG_DN     &kp HOME      &msc SCRL_LEFT   &msc SCRL_DOWN   &msc SCRL_UP  &msc SCRL_RIGHT  &mkp MB4    &none
+   &none  &kp LCTRL     &kp LSHFT    &kp LGUI     &kp LALT      &kp END       &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP  &mmv MOVE_RIGHT  &mkp MB5    &none
+   &none  &none         &cut         &copy        &paste        &mo NAV_FAST         &kp LEFT         &kp DOWN         &kp UP        &kp RIGHT        &none       &none
+                                     &kp TAB      &sm_bk_del    &kp RET       &mkp LCLK  &mkp MCLK        &mkp RCLK 
                         >;
                 };
+// Momentary layer for fast scroll and mouse movement
+nav_fast_layer {
+                        bindings = <
+   &none  &none         &none        &kp PG_UP    &kp PG_DN     &kp HOME      &msc SCRL_LEFT 80   &msc SCRL_DOWN 80   &msc SCRL_UP 80   &msc SCRL_RIGHT 80   &mkp MB4    &none
+   &none  &kp LCTRL     &kp LSHFT    &kp LGUI     &kp LALT      &kp END       &mmv MOVE_LEFT 3000 &mmv MOVE_DOWN 3000 &mmv MOVE_UP 3000 &mmv MOVE_RIGHT 3000 &mkp MB5    &none
+   &none  &none         &cut         &copy        &paste        &none         &kp LEFT            &kp DOWN            &kp UP            &kp RIGHT            &none       &none
+                                     &kp TAB      &sm_bk_del    &kp RET       &mkp LCLK           &mkp MCLK           &mkp RCLK
+    >;
+};
+
                 sticky_layer {
 // -------------------------------------------------------------------------------------------------------------------------------
 // | None  | None  | None  | None  | None  | None  |       | None  | None  | None  | None  | None  | None  |
