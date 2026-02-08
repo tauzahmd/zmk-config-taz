@@ -25,13 +25,13 @@
 #define NAVFAST 7
 
 &mmv {
-    time-to-max-speed-ms = <250>;
-    acceleration-exponent = <6>;
+    time-to-max-speed-ms = <500>;
+    acceleration-exponent = <3>;
 };
 
 &msc {
-    time-to-max-speed-ms = <250>;
-    acceleration-exponent = <10>;
+    time-to-max-speed-ms = <300>;
+    acceleration-exponent = <5>;
 };
 
 &mmv_input_listener {
