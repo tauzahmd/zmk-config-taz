@@ -258,23 +258,6 @@
                         flavor = "balanced";
                         bindings = <&mo>, <&kp>;
                 };
-                mouse_slow: mouse_slow {
-                        compatible = "zmk,behavior-input-setting";
-                        #binding-cells = <0>;
-
-                        device = <&mouse>;
-                        cursor-speed = <1000>;
-                        scroll-speed = <20>;
-                };
-
-                mouse_fast: mouse_fast {
-                        compatible = "zmk,behavior-input-setting";
-                        #binding-cells = <0>;
-
-                        device = <&mouse>;
-                        cursor-speed = <3500>;
-                        scroll-speed = <90>;
-                };
         };
         keymap {
                 compatible = "zmk,keymap";
