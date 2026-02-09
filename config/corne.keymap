@@ -19,10 +19,10 @@
 #define NUM   1
 #define SYS   2
 #define NAV   3
-#define STICKY 4
-#define LHRM  5
-#define RHRM  6
-#define NAVFAST 7
+#define NAVFAST 4
+#define STICKY 5
+#define LHRM  6
+#define RHRM  7
 
 &mmv {
     time-to-max-speed-ms = <500>;
